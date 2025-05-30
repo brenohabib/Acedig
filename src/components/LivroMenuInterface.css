@@ -1,0 +1,13 @@
+.livro-menu-interface {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  background-color: #f0f0f0;
+  width: 160px;
+  height: 160px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  justify-content: center;
+  color: #000;
+}
