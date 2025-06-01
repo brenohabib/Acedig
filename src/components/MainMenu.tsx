@@ -28,66 +28,59 @@ function MainMenu() {
                 <div className='livros'>
                     <h3>Livros Populares</h3>
                     <div className='livros-lista'>
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
-                        <LivroMenuInterface />
+                        <LivroMenuInterface /> {/* Ativo, vai para o placeholder */}
+                        
+                        <LivroMenuInterface disabled /> {/* Cinza, não faz nada */}
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        <LivroMenuInterface disabled />
+                        <LivroMenuInterface disabled /> 
+                        
+                        
                     </div>
                 </div>
             </div>

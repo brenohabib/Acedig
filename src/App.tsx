@@ -4,6 +4,7 @@ import MainMenu from './components/MainMenu';
 import Acervo from './components/Acervo';
 import Duvida from './components/Duvida';
 import Reserva from './components/Reserva';
+import { LivroPlaceholder } from './components/livros/livrosPlaceholder';
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
         <Route path="Acervo" element={<Acervo />} />
         <Route path="Duvidas" element={<Duvida />} />
         <Route path="Reserva" element={<Reserva />} />
-
+        <Route path="livro/:titulo" element={<LivroPlaceholder />} />
         <Route path="*" element={<MainMenu />} />
 
 
