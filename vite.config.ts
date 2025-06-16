@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 4001,
-    open: '/home', // This will open http://localhost:4001/home
+    open: '/login', // This will open http://localhost:4001/login
   },
 });

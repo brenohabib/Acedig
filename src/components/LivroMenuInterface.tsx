@@ -3,12 +3,12 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate } from 'react-router-dom';
 
 interface LivroMenuInterfaceProps {
+    titulo?: string;
     disabled?: boolean;
 }
 
-function LivroMenuInterface({ disabled = false }: LivroMenuInterfaceProps) {
+function LivroMenuInterface({ titulo = "Título do Livro", disabled = false }: LivroMenuInterfaceProps) {
     const navigate = useNavigate();
-    const titulo = "Título do Livro";
 
     const handleClick = () => {
         if (disabled) return;

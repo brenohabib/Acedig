@@ -1,0 +1,107 @@
+.login-container {
+  max-width: 340px;
+  margin: 80px auto;
+  padding: 32px 24px;
+  background: #fffbe8;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-container h2 {
+  color: #ffa686;
+  margin-bottom: 24px;
+  font-size: 2em;
+}
+
+.login-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.login-tabs button {
+  background: #ffd381;
+  color: #222;
+  border-radius: 8px;
+  border: none;
+  padding: 8px 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  font-size: 1em;
+}
+
+.login-tabs .active-tab {
+  background: #ffa686;
+  color: #222;
+}
+
+.login-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+  width: 100%;
+  justify-content: center;
+}
+
+.login-tabs button {
+  min-width: 110px; /* ajuste conforme necessário */
+  text-align: center;
+}
+
+.login-tabs button:not(.active-tab):hover {
+  background: #ffb88c;
+}
+
+.form-group {
+  width: 100%;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-group label {
+  margin-bottom: 6px;
+  color: #444;
+  font-weight: 500;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ffd381;
+  border-radius: 6px;
+  font-size: 1em;
+  background: #fff;
+  color: #222;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  outline: none;
+  border: 1.5px solid #ffa686;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px 0;
+  background: #ffa686;
+  color: #222;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+button[type="submit"]:hover {
+  background: #ffb88c;
+}
