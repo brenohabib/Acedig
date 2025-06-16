@@ -22,8 +22,8 @@ function Duvida() {
 
             </div>
             <div className="tbd">
-                <h1>TBD</h1>
-                <p>EM CONSTRUÇÂO.</p>
+                <h1 style={{ textAlign: 'center', color: "black"}}>Perguntas </h1>
+                <p style={{ textAlign: 'center', color: "black" }}>EM CONSTRUÇÂO.</p>
 
             </div>
         </>
