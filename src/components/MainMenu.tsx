@@ -1,90 +1,49 @@
+import React, { useEffect, useState } from 'react';
 import './MainMenu.css'
-import SidebarMenu from './SidebarMenu'
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import TopBar from './TopBar';
 import LivroMenuInterface from './LivroMenuInterface';
 
 function MainMenu() {
+    const [livros, setLivros] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        fetch("http://localhost:8080/livro-digital")
+            .then(res => res.json())
+            .then(data => setLivros(data))
+            .catch(() => setLivros([]))
+            .finally(() => setLoading(false));
+    }, []);
+
     return (
         <div className="main-menu">
-            <div className="top-bar">
-                <div className="left">
-                    <SidebarMenu />
-                </div>
-                <ul className="center">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/Acervo">Acervo Digital</a></li>
-                    <li><a href="/Reserva">Reserva de Livros</a></li>
-                    <li><a href="/Duvidas">Dúvidas</a></li>
-                </ul>
-                <div className="right">
-                    <div className='icon'><InsertEmoticonIcon style={{ fontSize: 60 }} /></div>
-                </div>
-            </div>
+            <TopBar />
             <div className='welcome'>
                 <h1>Bem vindo ao ACEDIG</h1>
             </div>
             <div className='main'>
-
                 <div className='livros'>
                     <h3>Livros Populares</h3>
                     <div className='livros-lista'>
-                        <LivroMenuInterface /> {/* Ativo, vai para o placeholder */}
-                        
-                        <LivroMenuInterface disabled /> {/* Cinza, não faz nada */}
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        <LivroMenuInterface disabled />
-                        <LivroMenuInterface disabled /> 
-                        
-                        
+                        {loading ? (
+                            <div style={{ color: "#888" }}>Carregando livros...</div>
+                        ) : livros.length > 0 ? (
+                            livros.map((livro, idx) => (
+                                <LivroMenuInterface
+                                    key={livro.id || idx}
+                                    titulo={livro.titulo}
+                                    quantidade={livro.quantidadeDisponivel}
+                                    sinopse={livro.sinopse}
+                                    disabled={livro.quantidadeDisponivel === 0}
+                                />
+                            ))
+                        ) : (
+                            <div style={{ color: "#888" }}>Nenhum livro encontrado.</div>
+                        )}
                     </div>
                 </div>
             </div>
-
         </div>
     );
 }

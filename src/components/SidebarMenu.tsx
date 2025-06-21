@@ -26,11 +26,11 @@ function SidebarMenu() {
           </button>
           <nav>
             <ul>
-              <li><a href="/home">Home</a></li>
-              <li><a href="/acervo">Acervo</a></li>
-              <li><a href="/duvidas">Dúvidas</a></li>
-              <li><a href="/reserva">Reserva</a></li>
-            </ul>
+  <li><a href="/home">Home</a></li>
+  <li><a href="/acervo">Acervo</a></li>
+  <li><a href="/duvidas">Dúvidas</a></li>
+  {/* <li><a href="/reserva">Reserva</a></li> */}
+</ul>
           </nav>
           <div className="sidebar-login-link">
             <a href="/login">Logout</a>

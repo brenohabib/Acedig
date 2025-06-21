@@ -3,11 +3,13 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate } from 'react-router-dom';
 
 interface LivroMenuInterfaceProps {
-    titulo?: string;
+    titulo: string;
     disabled?: boolean;
+    quantidade?: number;
+    sinopse?: string;
 }
 
-function LivroMenuInterface({ titulo = "Título do Livro", disabled = false }: LivroMenuInterfaceProps) {
+function LivroMenuInterface({ titulo, disabled = false, quantidade = 0, sinopse = "" }: LivroMenuInterfaceProps) {
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -24,9 +26,9 @@ function LivroMenuInterface({ titulo = "Título do Livro", disabled = false }: L
         >
             <MenuBookIcon style={{ fontSize: 32, color: disabled ? '#bbb' : '#ffa686' }} />
             <div className="livro-titulo" style={{ fontWeight: 'bold', marginTop: 6 }}>{titulo}</div>
-            <div className="livro-qtd" style={{ fontSize: 12, color: '#888' }}>Qtd.: 3</div>
+            <div className="livro-qtd" style={{ fontSize: 12, color: '#888' }}>Qtd.: {quantidade}</div>
             <div className="livro-sinopse" style={{ fontSize: 11, marginTop: 6, textAlign: 'center' }}>
-                Uma breve sinopse ou blurb do livro aparece aqui.
+                {sinopse || "Uma breve sinopse ou blurb do livro aparece aqui."}
             </div>
         </button>
     );

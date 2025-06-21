@@ -1,27 +1,23 @@
-import { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './TBD.css'
-import SidebarMenu from './SidebarMenu';
-import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
+import TopBar from './TopBar';
 import LivroMenuInterface from './LivroMenuInterface';
 
 
 
-const livros = [
-    { titulo: "Dom Casmurro", disabled: false },
-    { titulo: "Memórias Póstumas", disabled: true },
-    { titulo: "O Primo Basílio", disabled: true },
-    { titulo: "Senhora", disabled: true },
-    { titulo: "Iracema", disabled: true },
-    { titulo: "A Moreninha", disabled: true },
-    { titulo: "O Guarani", disabled: true },
-    { titulo: "Capitães da Areia", disabled: true },
-    { titulo: "Vidas Secas", disabled: true },
-    { titulo: "O Cortiço", disabled: true },
-    // ...adicione mais livros conforme necessário
-];
-
 function Acervo() {
     const [search, setSearch] = useState('');
+    const [livros, setLivros] = useState<any[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        setLoading(true);
+        fetch("http://localhost:8080/livro-digital")
+            .then(res => res.json())
+            .then(data => setLivros(data))
+            .catch(() => setLivros([]))
+            .finally(() => setLoading(false));
+    }, []);
 
     // Filtra os livros pelo título, ignorando maiúsculas/minúsculas e acentos
     const filteredLivros = livros.filter(livro =>
@@ -33,20 +29,7 @@ function Acervo() {
 
     return (
         <div className="main-menu">
-            <div className="top-bar">
-                <div className="left">
-                    <SidebarMenu />
-                </div>
-                <ul className="center">
-                    <li><a href="/home">Home</a></li>
-                    <li><a href="/Acervo">Acervo Digital</a></li>
-                    <li><a href="/Reserva">Reserva de Livros</a></li>
-                    <li><a href="/Duvidas">Dúvidas</a></li>
-                </ul>
-                <div className="right">
-                    <div className='icon'><InsertEmoticonIcon style={{ fontSize: 60 }} /></div>
-                </div>
-            </div>
+            <TopBar />
             <div className='search-container'>
                 <input
                     type="text"
@@ -60,16 +43,24 @@ function Acervo() {
                 <div className='livros'>
                     <h3>Acervo Digital</h3>
                     <div className={`livros-lista${filteredLivros.length === 0 ? ' lista-vazia' : ''}`}>
-                        {filteredLivros.length > 0 ? (
+                        {loading ? (
+                            <div style={{ width: "100%", textAlign: "center", color: "#888", marginTop: 32 }}>
+                                Carregando livros...
+                            </div>
+                        ) : filteredLivros.length > 0 ? (
                             filteredLivros.map((livro, idx) => (
                                 <LivroMenuInterface
-                                    key={livro.titulo + idx}
+                                    key={livro.id || idx}
                                     titulo={livro.titulo}
-                                    disabled={livro.disabled}
+                                    quantidade={livro.quantidadeDisponivel}
+                                    sinopse={livro.sinopse}
+                                    disabled={livro.quantidadeDisponivel === 0}
                                 />
                             ))
                         ) : (
-                            <div style={{ width: "100%", textAlign: "center", color: "#888", marginTop: 32 }}> Nenhum livro encontrado. </div>
+                            <div style={{ width: "100%", textAlign: "center", color: "#888", marginTop: 32 }}>
+                                Nenhum livro encontrado.
+                            </div>
                         )}
                     </div>
                 </div>

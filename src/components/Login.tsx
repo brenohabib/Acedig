@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
 import LoginAPI from "./API/LoginAPI";
+import RegistrarAPI from "./API/RegistrarAPI";
 
 function Login() {
     const navigate = useNavigate();
@@ -32,13 +33,8 @@ function Login() {
                 </button>
             </div>
             <h2>{mode === "login" ? "Login" : "Registrar"}</h2>
-            <LoginAPI />
-            {mode === "register" && (
-                <div className="form-group">
-                    <label htmlFor="confirm">Confirmar Senha:</label>
-                    <input type="password" id="confirm" name="confirm" required />
-                </div>
-            )}
+            {mode === "login" && <LoginAPI />}
+            {mode === "register" && <RegistrarAPI />}
 
         </div>
     );

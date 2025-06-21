@@ -100,6 +100,11 @@
   transition: color 0.2s;
 }
 
+.sidebar-close-btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .sidebar-close-btn:hover {
   color: #ff8c42;
 }
