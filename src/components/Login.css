@@ -1,17 +1,38 @@
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: #ffe3b0; /* amarelo claro */
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#root {
+  height: 100vh;
+}
+
 .login-container {
-  max-width: 340px;
-  margin: 80px auto;
-  padding: 32px 24px;
-  background: #fffbe8;
+  max-width: 400px;
+  width: 100%;
+  min-height: 420px;
+  margin: 0 auto;
+  padding: 40px 32px;
+  background: #fff8e1; /* amarelo bem claro */
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 4px 24px rgba(255, 87, 34, 0.10); /* sombra avermelhada suave */
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #222;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .login-container h2 {
-  color: #ffa686;
+  color: #ff7043; /* vermelho alaranjado */
   margin-bottom: 24px;
   font-size: 2em;
 }
@@ -25,37 +46,27 @@
 }
 
 .login-tabs button {
-  background: #ffd381;
-  color: #222;
+  background: #ffe082; /* amarelo */
+  color: #b71c1c; /* vermelho escuro */
   border-radius: 8px;
   border: none;
   padding: 8px 18px;
   font-weight: bold;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
   font-size: 1em;
-}
-
-.login-tabs .active-tab {
-  background: #ffa686;
-  color: #222;
-}
-
-.login-tabs {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 24px;
-  width: 100%;
-  justify-content: center;
-}
-
-.login-tabs button {
-  min-width: 110px; /* ajuste conforme necessário */
+  min-width: 110px;
   text-align: center;
 }
 
+.login-tabs .active-tab {
+  background: #ff7043; /* vermelho alaranjado */
+  color: #fff;
+}
+
 .login-tabs button:not(.active-tab):hover {
-  background: #ffb88c;
+  background: #ffd54f; /* amarelo mais forte */
+  color: #b71c1c;
 }
 
 .form-group {
@@ -63,36 +74,41 @@
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
 }
 
 .form-group label {
   margin-bottom: 6px;
-  color: #444;
+  color: #b71c1c; /* vermelho escuro */
   font-weight: 500;
+  align-self: flex-start;
 }
 
 .form-group input {
   width: 100%;
-  padding: 8px 10px;
-  border: 1px solid #ffd381;
+  max-width: 320px;
+  padding: 10px 12px;
+  border: 1.5px solid #ff7043; /* vermelho alaranjado */
   border-radius: 6px;
   font-size: 1em;
-  background: #fff;
+  background: #fffde7; /* amarelo muito claro */
   color: #222;
-  transition: border 0.2s;
+  transition: border 0.2s, background 0.2s;
+  box-sizing: border-box;
 }
 
 .form-group input:focus {
   outline: none;
-  border: 1.5px solid #ffa686;
+  border: 2px solid #ff7043;
+  background: #fff;
 }
 
 button[type="submit"] {
   width: 100%;
-  padding: 10px 0;
-  background: #ffa686;
-  color: #222;
+  max-width: 320px;
+  padding: 12px 0;
+  background: #ff7043; /* vermelho alaranjado */
+  color: #fff;
   border: none;
   border-radius: 8px;
   font-size: 1.1em;
@@ -103,5 +119,17 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background: #ffb88c;
+  background: #ffd54f; /* amarelo mais forte */
+  color: #b71c1c;
 }
+
+@media (max-width: 500px) {
+  .login-container {
+    max-width: 98vw;
+    padding: 16px 4vw;
+  }
+  .form-group input,
+  button[type="submit"] {
+        max-width: 100%;
+      }
+    }

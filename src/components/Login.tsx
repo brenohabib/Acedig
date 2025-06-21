@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import "./Login.css";
 import { useNavigate } from "react-router-dom";
+import LoginAPI from "./API/LoginAPI";
 
 function Login() {
     const navigate = useNavigate();
     const [mode, setMode] = useState<"login" | "register">("login");
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        // Simule ação de login ou registro
-        navigate("/home");
-    };
+    //const handleSubmit = (e: React.FormEvent) => {
+    //e.preventDefault();
+    // Simule ação de login ou registro
+    //navigate("/home");
+    //};
 
     return (
         <div className="login-container">
@@ -31,23 +32,14 @@ function Login() {
                 </button>
             </div>
             <h2>{mode === "login" ? "Login" : "Registrar"}</h2>
-            <form onSubmit={handleSubmit}>
+            <LoginAPI />
+            {mode === "register" && (
                 <div className="form-group">
-                    <label htmlFor="username">Username:</label>
-                    <input type="text" id="username" name="username" required />
+                    <label htmlFor="confirm">Confirmar Senha:</label>
+                    <input type="password" id="confirm" name="confirm" required />
                 </div>
-                <div className="form-group">
-                    <label htmlFor="password">Password:</label>
-                    <input type="password" id="password" name="password" required />
-                </div>
-                {mode === "register" && (
-                    <div className="form-group">
-                        <label htmlFor="confirm">Confirmar Senha:</label>
-                        <input type="password" id="confirm" name="confirm" required />
-                    </div>
-                )}
-                <button type="submit">{mode === "login" ? "Login" : "Registrar"}</button>
-            </form>
+            )}
+
         </div>
     );
 }
