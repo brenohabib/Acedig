@@ -47,7 +47,10 @@ function RegistrarAPI() {
     }
 
     return (
-        <>
+        <form onSubmit={(e) => {
+            e.preventDefault();
+            registrar();
+        }}>
             <div className="form-group">
                 <label htmlFor="nome">Nome:</label>
                 <input
@@ -88,10 +91,10 @@ function RegistrarAPI() {
                     onChange={(e) => setTelefone(e.target.value)}
                 />
             </div>
-            {success && <div style={{ color: "green", marginBottom: "10px" }}>{success}</div>}
-            {error && <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>}
-            <button type="submit" onClick={registrar}>Registrar</button>
-        </>
+            {success && <div style={{color: "green", marginBottom: "10px"}}>{success}</div>}
+            {error && <div style={{color: "red", marginBottom: "10px"}}>{error}</div>}
+            <button type="submit">Registrar</button>
+        </form>
     );
 }
 

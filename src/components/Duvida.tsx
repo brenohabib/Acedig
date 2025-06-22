@@ -13,7 +13,6 @@ function Duvida() {
                 <ul className="center">
                     <li><a href="/home">Home</a></li>
                     <li><a href="/Acervo">Acervo Digital</a></li>
-                    <li><a href="/Reserva">Reserva de Livros</a></li>
                     <li><a href="/Duvidas">Dúvidas</a></li>
                 </ul>
                 <div className="right">

@@ -15,9 +15,9 @@ function LoginAPI() {
     async function login() {
         setError("");
         setSuccess("");
-        let item = { email, senha };
+        const item = { email, senha };
         try {
-            let result = await fetch("http://localhost:8080/auth/login", {
+            const result = await fetch("http://localhost:8080/auth/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -30,7 +30,7 @@ function LoginAPI() {
                 const data = await result.json();
                 localStorage.setItem("user-info", JSON.stringify(data));
                 setSuccess("Login realizado com sucesso!");
-                setTimeout(() => navigate("/home"), 1000); // Aguarda 1s antes de redirecionar
+                setTimeout(() => navigate("/home"), 500); // Aguarda 0,5s antes de redirecionar
             } else if (result.status === 401) {
                 setError("Usuário ou senha incorretos.");
             } else {
@@ -41,18 +41,37 @@ function LoginAPI() {
         }
     }
 
-
     return (
         <>
             <div className="form-group">
                 <label htmlFor="username">E-Mail:</label>
-                <input type="text" id="username" name="E-Mail" required
-                    onChange={(e) => setEmail(e.target.value)} />
+                <input
+                    type="text"
+                    id="username"
+                    name="E-Mail"
+                    required
+                    onChange={(e) => setEmail(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            login();
+                        }
+                    }}
+                />
             </div>
             <div className="form-group">
                 <label htmlFor="password">Senha:</label>
-                <input type="password" id="password" name="Senha" required
-                    onChange={(e) => setSenha(e.target.value)} />
+                <input
+                    type="password"
+                    id="password"
+                    name="Senha"
+                    required
+                    onChange={(e) => setSenha(e.target.value)}
+                    onKeyDown={(e) => {
+                        if (e.key === 'Enter') {
+                            login();
+                        }
+                    }}
+                />
             </div>
             {success && <div style={{ color: "green", marginBottom: "10px" }}>{success}</div>}
             {error && <div style={{ color: "red", marginBottom: "10px" }}>{error}</div>}

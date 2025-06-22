@@ -74,7 +74,6 @@ body, html {
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .form-group label {
@@ -86,7 +85,6 @@ body, html {
 
 .form-group input {
   width: 100%;
-  max-width: 320px;
   padding: 10px 12px;
   border: 1.5px solid #ff7043; /* vermelho alaranjado */
   border-radius: 6px;

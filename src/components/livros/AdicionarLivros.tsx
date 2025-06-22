@@ -48,7 +48,14 @@ function AdicionarLivros() {
     }
 
     return (
-        <div className="login-container">
+        <div className="login-container" style={{
+            maxHeight: '100vh',
+            overflowY: 'auto',
+            padding: '20px',
+            marginTop: '1cm',
+            marginBottom: '1cm'
+
+        }}>
             <h2>Adicionar Livro Digital</h2>
             <form onSubmit={handleSubmit}>
                 <div className="form-group">
@@ -101,6 +108,7 @@ function AdicionarLivros() {
                     padding: "10px 18px",
                     fontWeight: "bold",
                     cursor: "pointer"
+
                 }}
                 onClick={() => navigate("/home")}
             >
