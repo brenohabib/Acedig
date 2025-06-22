@@ -2,6 +2,9 @@ import "../Login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Formulário de login de usuário.
+// Envia email e senha para o backend, salva o usuário logado no localStorage e redireciona para Home.
+
 function LoginAPI() {
     const navigate = useNavigate();
     const [email, setEmail] = useState("");

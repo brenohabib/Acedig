@@ -3,6 +3,10 @@ import './MainMenu.css'
 import TopBar from './TopBar';
 import LivroMenuInterface from './LivroMenuInterface';
 
+// Página inicial (Home) do sistema.
+// Mostra uma mensagem de boas-vindas e uma lista de livros populares buscados do backend.
+// Usa o componente TopBar e LivroMenuInterface.
+
 function MainMenu() {
     const [livros, setLivros] = useState<any[]>([]);
     const [loading, setLoading] = useState(true);

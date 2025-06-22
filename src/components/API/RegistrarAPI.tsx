@@ -2,6 +2,9 @@ import "../Login.css";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+// Formulário de cadastro de novo usuário.
+// Envia os dados para o backend e exibe mensagens de sucesso ou erro.
+
 function RegistrarAPI() {
     const navigate = useNavigate();
     const [nome, setNome] = useState("");

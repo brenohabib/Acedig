@@ -4,6 +4,11 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useEffect, useState } from 'react';
 
 
+
+// Menu lateral (sidebar) que aparece ao clicar no ícone de apps.
+// Mostra links de navegação e as notificações do usuário, buscadas do backend.
+// As notificações são destacadas conforme o tipo (ex: reserva).
+
 function SidebarMenu() {
   const [open, setOpen] = useState(false);
   const [notificacoes, setNotificacoes] = useState<any[]>([]);

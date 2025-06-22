@@ -8,6 +8,9 @@ import Login from './components/Login';
 import AdicionarLivros from './components/livros/AdicionarLivros';
 import { LivroPlaceholder } from './components/livros/livrosPlaceholder';
 
+// Componente principal da aplicação. Define as rotas de navegação usando React Router.
+// Cada <Route> define uma página/component diferente do sistema.
+
 function App() {
 
   

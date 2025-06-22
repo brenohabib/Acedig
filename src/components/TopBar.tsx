@@ -1,6 +1,10 @@
 import SidebarMenu from "./SidebarMenu";
 import InsertEmoticonIcon from '@mui/icons-material/InsertEmoticon';
 
+
+// Barra superior fixa da aplicação, com links de navegação e o menu lateral (SidebarMenu).
+// Exibe também um ícone à direita.
+
 function TopBar() {
     return (
         <div className="top-bar">

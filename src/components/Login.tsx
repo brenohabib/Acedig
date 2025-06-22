@@ -4,6 +4,9 @@ import { useNavigate } from "react-router-dom";
 import LoginAPI from "./API/LoginAPI";
 import RegistrarAPI from "./API/RegistrarAPI";
 
+// Tela de login e registro de usuário.
+// Permite alternar entre login e cadastro, exibindo o formulário correspondente.
+
 function Login() {
     const navigate = useNavigate();
     const [mode, setMode] = useState<"login" | "register">("login");
