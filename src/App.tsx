@@ -5,6 +5,7 @@ import Acervo from './components/Acervo';
 import Duvida from './components/Duvida';
 import Reserva from './components/Reserva';
 import Login from './components/Login';
+import AdicionarLivros from './components/livros/AdicionarLivros';
 import { LivroPlaceholder } from './components/livros/livrosPlaceholder';
 
 function App() {
@@ -18,7 +19,8 @@ function App() {
         <Route path="Acervo" element={<Acervo />} />
         <Route path="Duvidas" element={<Duvida />} />
         <Route path="Reserva" element={<Reserva />} />
-        <Route path="livro/:titulo" element={<LivroPlaceholder />} />
+        <Route path="adicionar-livro" element={<AdicionarLivros />} />
+        <Route path="/livro/:id" element={<LivroPlaceholder />} />
         <Route path="*" element={<MainMenu />} />
 
 

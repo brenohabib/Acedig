@@ -3,19 +3,19 @@ import MenuBookIcon from '@mui/icons-material/MenuBook';
 import { useNavigate } from 'react-router-dom';
 
 interface LivroMenuInterfaceProps {
+    id: number; // Adicione o id do livro
     titulo: string;
     disabled?: boolean;
     quantidade?: number;
     sinopse?: string;
 }
 
-function LivroMenuInterface({ titulo, disabled = false, quantidade = 0, sinopse = "" }: LivroMenuInterfaceProps) {
+function LivroMenuInterface({ id, titulo, disabled = false, quantidade = 0, sinopse = "" }: LivroMenuInterfaceProps) {
     const navigate = useNavigate();
 
     const handleClick = () => {
         if (disabled) return;
-        const urlTitulo = encodeURIComponent(titulo.replace(/\s+/g, '-').toLowerCase());
-        navigate(`/livro/${urlTitulo}`);
+        navigate(`/livro/${id}`); // Use o id real do livro
     };
 
     return (

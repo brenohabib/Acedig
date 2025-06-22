@@ -31,12 +31,12 @@ function MainMenu() {
                         ) : livros.length > 0 ? (
                             livros.map((livro, idx) => (
                                 <LivroMenuInterface
-                                    key={livro.id || idx}
-                                    titulo={livro.titulo}
-                                    quantidade={livro.quantidadeDisponivel}
-                                    sinopse={livro.sinopse}
-                                    disabled={livro.quantidadeDisponivel === 0}
-                                />
+    id={livro.id}
+    titulo={livro.titulo}
+    quantidade={livro.quantidadeDisponivel}
+    sinopse={livro.sinopse}
+    disabled={livro.quantidadeDisponivel === 0}
+/>
                             ))
                         ) : (
                             <div style={{ color: "#888" }}>Nenhum livro encontrado.</div>

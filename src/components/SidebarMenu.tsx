@@ -3,6 +3,7 @@ import AppsIcon from '@mui/icons-material/Apps';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 
+
 function SidebarMenu() {
   const [open, setOpen] = useState(false);
 
@@ -30,6 +31,7 @@ function SidebarMenu() {
   <li><a href="/acervo">Acervo</a></li>
   <li><a href="/duvidas">Dúvidas</a></li>
   {/* <li><a href="/reserva">Reserva</a></li> */}
+  <li><a href="/adicionar-livro">adicionar livros</a></li>
 </ul>
           </nav>
           <div className="sidebar-login-link">

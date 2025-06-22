@@ -50,7 +50,7 @@ function Acervo() {
                         ) : filteredLivros.length > 0 ? (
                             filteredLivros.map((livro, idx) => (
                                 <LivroMenuInterface
-                                    key={livro.id || idx}
+                                    id={livro.id}
                                     titulo={livro.titulo}
                                     quantidade={livro.quantidadeDisponivel}
                                     sinopse={livro.sinopse}
