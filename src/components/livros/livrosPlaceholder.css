@@ -2,70 +2,154 @@
   display: flex;
   height: 100vh;
   width: 100vw;
-  background: #fffbe8;
+  background: #ffdec2; /* amarelo claro sólido */
   box-sizing: border-box;
+  font-family: 'Segoe UI', Arial, sans-serif;
 }
-
 .livro-sidebar {
-  width: 280px;
-  min-width: 200px;
-  max-width: 340px;
-  background: #ffd381;
+  width: 320px;
+  min-width: 220px;
+  max-width: 360px;
+  background: #fff8e1;
   border-right: 2px solid #ffa686;
-  padding: 32px 24px;
+  padding: 40px 28px 32px 28px;
   display: flex;
   flex-direction: column;
   gap: 18px;
   box-sizing: border-box;
   color: #222;
+  box-shadow: 2px 0 16px rgba(255, 168, 134, 0.08);
+  align-items: flex-start;
 }
 
 .livro-titulo {
-  font-size: 1.5em;
+  font-size: 2em;
   font-weight: bold;
-  color: #ffa686;
-  margin: 0 0 12px 0;
+  color: #ff7043;
+  margin: 0 0 16px 0;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 8px #ffd38144;
 }
 
 .livro-autor,
 .livro-popularidade,
-.livro-quantidade {
-  font-size: 1.05em;
-  color: #444;
+.livro-quantidade,
+.livro-editora,
+.livro-ano,
+.livro-tipo,
+.livro-tamanho {
+  font-size: 1.08em;
+  color: #b71c1c;
+  margin-bottom: 4px;
+  background: #ffe3b0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.livro-popularidade {
+  color: #ff7043;
+  background: #fff3e0;
+}
+
+.livro-reserva-btn {
+  
+  background: #ff7043;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 0;
+  font-size: 1.08em;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+.livro-reserva-btn:hover {
+  background: #ffd381;
+  color: #b71c1c;
+}
+
+.livro-voltar-btn.topo-esquerda {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  margin: 0;
+  z-index: 2;
+  background: #ffd381;
+  color: #b71c1c;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5em;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #ffd38144;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 
+    background 0.2s,
+    color 0.2s,
+    box-shadow 0.2s,
+    transform 0.1s;
+}
+
+.livro-voltar-btn.topo-esquerda:hover {
+  background: #ff7043;
+  color: #fff;
+  box-shadow: 0 4px 16px #ff704344;
+  transform: translateY(-2px) scale(1.08);
 }
 
 .livro-conteudo-area {
   flex: 1;
-  padding: 40px 48px;
+  padding: 56px 6vw 40px 6vw;
   display: flex;
-  align-items: flex-start;    /* Alinha no topo */
-  justify-content: center;    /* Centraliza horizontalmente */
-  background: #fffbe8;
+  align-items: flex-start;
+  justify-content: center;
+  background: transparent;
   box-sizing: border-box;
   overflow-y: auto;
 }
 
 .livro-conteudo {
-  font-size: 1.1em;
+  font-size: 1.18em;
   color: #333;
-  line-height: 1.7;
+  line-height: 1.8;
   max-width: 900px;
-  text-align: center;      /* Centraliza o texto */
-}
-.livro-voltar-btn {
-  margin-top: auto;
-  align-self: center;      /* Centraliza o botão na sidebar */
-  background: #ffa686;
-  color: #222;
-  border: none;
-  border-radius: 8px;
-  padding: 6px 14px;       /* Botão menor */
-  font-size: 0.95em;       /* Fonte menor */
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.2s;
+  min-width: 320px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px #ffd38133;
+  padding: 36px 32px;
+  text-align: left;
+  margin: 0 auto;
+  word-break: break-word;
 }
 
-.livro-voltar-btn:hover {
-  background: #ffb88c;
+@media (max-width: 900px) {
+  .livro-sidebar {
+    display: none;
+  }
+  .livro-conteudo-area {
+    padding: 32px 2vw;
+  }
+  .livro-conteudo {
+    padding: 24px 8px;
+    min-width: unset;
+  }
+}
+
+.livro-capa {
+  width: 100%;
+  margin-top: 48px; /* Espaço extra abaixo do botão X */
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
